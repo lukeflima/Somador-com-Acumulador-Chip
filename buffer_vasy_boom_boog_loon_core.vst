@@ -1,0 +1,56 @@
+entity buffer_vasy_boom_boog_loon is
+   port (
+      a   : in      bit_vector(3 downto 0);
+      s   : out     bit_vector(3 downto 0);
+      vdd : in      bit;
+      vss : in      bit
+ );
+end buffer_vasy_boom_boog_loon;
+
+architecture structural of buffer_vasy_boom_boog_loon is
+Component buf_x2
+   port (
+      i   : in      bit;
+      q   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+
+begin
+
+s_0_ins : buf_x2
+   port map (
+      i   => a(0),
+      q   => s(0),
+      vdd => vdd,
+      vss => vss
+   );
+
+s_1_ins : buf_x2
+   port map (
+      i   => a(1),
+      q   => s(1),
+      vdd => vdd,
+      vss => vss
+   );
+
+s_2_ins : buf_x2
+   port map (
+      i   => a(2),
+      q   => s(2),
+      vdd => vdd,
+      vss => vss
+   );
+
+s_3_ins : buf_x2
+   port map (
+      i   => a(3),
+      q   => s(3),
+      vdd => vdd,
+      vss => vss
+   );
+
+
+end structural;

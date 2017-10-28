@@ -1,0 +1,32 @@
+-- VHDL data flow description generated from `mux_vasy_boom`
+--		date : Thu Oct 26 17:16:11 2017
+
+
+-- Entity Declaration
+
+ENTITY mux_vasy_boom IS
+  PORT (
+  sel : in BIT;	-- sel
+  a : in bit_vector(3 DOWNTO 0) ;	-- a
+  b : in bit_vector(3 DOWNTO 0) ;	-- b
+  s : out bit_vector(3 DOWNTO 0) ;	-- s
+  vdd : in BIT;	-- vdd
+  vss : in BIT	-- vss
+  );
+END mux_vasy_boom;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF mux_vasy_boom IS
+
+BEGIN
+
+s (0) <= ((NOT(sel) OR b(0)) AND (a(0) OR sel));
+
+s (1) <= ((sel OR a(1)) AND (NOT(sel) OR b(1)));
+
+s (2) <= ((NOT(sel) OR b(2)) AND (sel OR a(2)));
+
+s (3) <= ((sel OR a(3)) AND (b(3) OR NOT(sel)));
+END;

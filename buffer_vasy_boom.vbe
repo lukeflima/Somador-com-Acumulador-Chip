@@ -1,0 +1,30 @@
+-- VHDL data flow description generated from `buffer_vasy_boom`
+--		date : Thu Oct 26 17:16:11 2017
+
+
+-- Entity Declaration
+
+ENTITY buffer_vasy_boom IS
+  PORT (
+  a : in bit_vector(3 DOWNTO 0) ;	-- a
+  s : out bit_vector(3 DOWNTO 0) ;	-- s
+  vdd : in BIT;	-- vdd
+  vss : in BIT	-- vss
+  );
+END buffer_vasy_boom;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF buffer_vasy_boom IS
+
+BEGIN
+
+s (0) <= a(0);
+
+s (1) <= a(1);
+
+s (2) <= a(2);
+
+s (3) <= a(3);
+END;

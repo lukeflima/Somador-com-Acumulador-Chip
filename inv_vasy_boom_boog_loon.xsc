@@ -1,0 +1,22 @@
+N:s 0:-1:116 ps
+N:s 1:-1:116 ps
+N:s 2:-1:116 ps
+N:s 3:-1:116 ps
+N:a 0:-1:0 ps
+N:a 1:-1:0 ps
+N:a 2:-1:0 ps
+N:a 3:-1:0 ps
+B:s_3_ins:-1:116 ps
+B:s_2_ins:-1:116 ps
+B:s_1_ins:-1:116 ps
+B:s_0_ins:32:116 ps
+C:s 0:32:116 ps
+C:s 1:-1:116 ps
+C:s 2:-1:116 ps
+C:s 3:-1:116 ps
+C:a 0:32:0 ps
+C:a 1:-1:0 ps
+C:a 2:-1:0 ps
+C:a 3:-1:0 ps
+P:a 0:a 0:s_0_ins:32:116 ps
+P:s_0_ins:s 0:s 0:32:116 ps

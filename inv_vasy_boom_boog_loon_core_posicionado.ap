@@ -1,0 +1,9 @@
+V ALLIANCE : 6
+H inv_vasy_boom_boog_loon_core_posicionado,P,25/10/2017,100
+A 0,0,7000,5000
+I 1500,0,tie_x0,tiex0_1,SYM_Y
+I 5500,0,inv_x2,s_2_ins,SYM_Y
+I 4000,0,inv_x2,s_0_ins,SYM_Y
+I 2500,0,inv_x2,s_3_ins,SYM_Y
+I 0,0,inv_x2,s_1_ins,SYM_Y
+EOF

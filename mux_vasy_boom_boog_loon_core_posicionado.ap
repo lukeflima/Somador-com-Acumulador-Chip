@@ -1,0 +1,14 @@
+V ALLIANCE : 6
+H mux_vasy_boom_boog_loon_core_posicionado,P,25/10/2017,100
+A 0,0,13000,10000
+I 12000,5000,tie_x0,tiex0_5,NOSYM
+I 11000,5000,tie_x0,tiex0_4,NOSYM
+I 5500,5000,tie_x0,tiex0_3,NOSYM
+I 4500,5000,tie_x0,tiex0_2,NOSYM
+I 3500,0,rowend_x0,rowendx0_1,SYM_Y
+I 6500,5000,ao2o22_x2,s_2_ins,NOSYM
+I 0,5000,oa2a22_x2,s_0_ins,NOSYM
+I 8500,0,oa2a22_x2,s_3_ins,SYM_Y
+I 4000,0,ao2o22_x2,s_1_ins,SYM_Y
+I 0,0,inv_x8,not_sel_ins,SYM_Y
+EOF
