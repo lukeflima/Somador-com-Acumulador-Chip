@@ -1,0 +1,65 @@
+-- VHDL data flow description generated from `adder_vasy_boom`
+--		date : Thu Oct 26 17:16:11 2017
+
+
+-- Entity Declaration
+
+ENTITY adder_vasy_boom IS
+  PORT (
+  a : in bit_vector(3 DOWNTO 0) ;	-- a
+  b : in bit_vector(3 DOWNTO 0) ;	-- b
+  c : in BIT;	-- c
+  s : out bit_vector(3 DOWNTO 0) ;	-- s
+  cout : out BIT;	-- cout
+  vdd : in BIT;	-- vdd
+  vss : in BIT	-- vss
+  );
+END adder_vasy_boom;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF adder_vasy_boom IS
+  SIGNAL aux0 : BIT;		-- aux0
+  SIGNAL aux1 : BIT;		-- aux1
+  SIGNAL aux2 : BIT;		-- aux2
+  SIGNAL aux3 : BIT;		-- aux3
+  SIGNAL aux4 : BIT;		-- aux4
+  SIGNAL aux6 : BIT;		-- aux6
+  SIGNAL aux7 : BIT;		-- aux7
+  SIGNAL aux9 : BIT;		-- aux9
+  SIGNAL aux10 : BIT;		-- aux10
+  SIGNAL aux11 : BIT;		-- aux11
+  SIGNAL aux12 : BIT;		-- aux12
+  SIGNAL aux14 : BIT;		-- aux14
+  SIGNAL aux15 : BIT;		-- aux15
+
+BEGIN
+  aux15 <= (b(3) XOR a(3));
+  aux14 <= ((aux10 AND aux6) OR aux3);
+  aux12 <= (b(2) XOR a(2));
+  aux11 <= (a(1) XOR b(1));
+  aux10 <= (c AND a(0));
+  aux9 <= ((aux7 AND aux2) OR aux1);
+  aux7 <= (aux6 AND (aux4 OR aux3));
+  aux6 <= (b(1) OR a(1));
+  aux4 <= (c OR a(0));
+  aux3 <= (b(1) AND a(1));
+  aux2 <= (a(2) OR b(2));
+  aux1 <= (a(2) AND b(2));
+  aux0 <= (a(3) AND b(3));
+
+cout <= ((aux10 OR aux3 OR aux1 OR aux0 OR b(0)) AND (
+a(3) OR b(3)) AND (aux9 OR aux0));
+
+s (0) <= (c XOR a(0) XOR b(0));
+
+s (1) <= (((aux4 XOR aux11) AND b(0)) OR ((aux10 XOR aux11
+) AND NOT(b(0))));
+
+s (2) <= (((aux7 XOR aux12) AND b(0)) OR ((aux14 XOR aux12
+) AND NOT(b(0))));
+
+s (3) <= (((aux9 XOR aux15) AND b(0)) OR (((aux2 AND (
+aux14 OR aux1)) XOR aux15) AND NOT(b(0))));
+END;

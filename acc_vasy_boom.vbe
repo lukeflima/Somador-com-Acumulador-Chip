@@ -1,0 +1,48 @@
+-- VHDL data flow description generated from `acc_vasy_boom`
+--		date : Thu Oct 26 17:16:11 2017
+
+
+-- Entity Declaration
+
+ENTITY acc_vasy_boom IS
+  PORT (
+  a : in bit_vector(3 DOWNTO 0) ;	-- a
+  clk : in BIT;	-- clk
+  s : out bit_vector(3 DOWNTO 0) ;	-- s
+  vdd : in BIT;	-- vdd
+  vss : in BIT	-- vss
+  );
+END acc_vasy_boom;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF acc_vasy_boom IS
+  SIGNAL rtlalc_0 : REG_VECTOR(3 DOWNTO 0) REGISTER;	-- rtlalc_0
+
+BEGIN
+  label0 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    rtlalc_0 (0) <= GUARDED a(0);
+  END BLOCK label0;
+  label1 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    rtlalc_0 (1) <= GUARDED a(1);
+  END BLOCK label1;
+  label2 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    rtlalc_0 (2) <= GUARDED a(2);
+  END BLOCK label2;
+  label3 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    rtlalc_0 (3) <= GUARDED a(3);
+  END BLOCK label3;
+
+s (0) <= rtlalc_0(0);
+
+s (1) <= rtlalc_0(1);
+
+s (2) <= rtlalc_0(2);
+
+s (3) <= rtlalc_0(3);
+END;

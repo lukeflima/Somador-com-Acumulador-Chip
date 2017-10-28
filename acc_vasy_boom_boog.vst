@@ -1,0 +1,104 @@
+entity acc_vasy_boom_boog is
+   port (
+      a   : in      bit_vector(3 downto 0);
+      clk : in      bit;
+      s   : out     bit_vector(3 downto 0);
+      vdd : in      bit;
+      vss : in      bit
+ );
+end acc_vasy_boom_boog;
+
+architecture structural of acc_vasy_boom_boog is
+Component sff1_x4
+   port (
+      ck  : in      bit;
+      i   : in      bit;
+      q   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component buf_x2
+   port (
+      i   : in      bit;
+      q   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+signal rtlalc_0 : bit_vector( 3 downto 0);
+
+begin
+
+rtlalc_0_0_ins : sff1_x4
+   port map (
+      ck  => clk,
+      i   => a(0),
+      q   => rtlalc_0(0),
+      vdd => vdd,
+      vss => vss
+   );
+
+rtlalc_0_1_ins : sff1_x4
+   port map (
+      ck  => clk,
+      i   => a(1),
+      q   => rtlalc_0(1),
+      vdd => vdd,
+      vss => vss
+   );
+
+rtlalc_0_2_ins : sff1_x4
+   port map (
+      ck  => clk,
+      i   => a(2),
+      q   => rtlalc_0(2),
+      vdd => vdd,
+      vss => vss
+   );
+
+rtlalc_0_3_ins : sff1_x4
+   port map (
+      ck  => clk,
+      i   => a(3),
+      q   => rtlalc_0(3),
+      vdd => vdd,
+      vss => vss
+   );
+
+s_0_ins : buf_x2
+   port map (
+      i   => rtlalc_0(0),
+      q   => s(0),
+      vdd => vdd,
+      vss => vss
+   );
+
+s_1_ins : buf_x2
+   port map (
+      i   => rtlalc_0(1),
+      q   => s(1),
+      vdd => vdd,
+      vss => vss
+   );
+
+s_2_ins : buf_x2
+   port map (
+      i   => rtlalc_0(2),
+      q   => s(2),
+      vdd => vdd,
+      vss => vss
+   );
+
+s_3_ins : buf_x2
+   port map (
+      i   => rtlalc_0(3),
+      q   => s(3),
+      vdd => vdd,
+      vss => vss
+   );
+
+
+end structural;
